@@ -10,23 +10,14 @@ package sistemasdefinitivo;
  * @author USER
  */
 public class Paciente extends Persona{
-    private String nombre;
-     private String diagnostico;
-     private Medico medico;
-     private Turno turno;
-     private Seguro seguro;
-     private Receta receta;
-     private double cuenta;
-
-    @Override
-    public String getNombre() {
-        return nombre;
-    }
-
-    @Override
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    private Habitacion habitacion;
+    private String diagnostico;
+    private Medico medico;
+    private Turno turno;
+    private Seguro seguro;
+    private Receta receta;
+    private double cuenta;
+    private int estado;
 
     public String getDiagnostico() {
         return diagnostico;
@@ -76,8 +67,38 @@ public class Paciente extends Persona{
         this.cuenta = cuenta;
     }
     
-    
-    
-    
-}
+    public Habitacion getHabitacion() {
+        return habitacion;
+    }
 
+    public void setHabitacion(Habitacion habitacion) {
+        this.habitacion = habitacion;
+    }
+    
+    public String getEstado(){
+        String estado1="";
+        switch(this.estado){
+            case 1:
+                estado1="Sano";
+                break;
+            case 2:
+                estado1="Enfermo";
+                break;
+            case 3:
+                estado1="Critico";
+                break;
+        }
+        return estado1;
+    }
+    
+    public void setEstado(int estado){
+        this.estado=estado;
+    }
+    
+    public Paciente(int estado){
+        super();
+        this.estado=estado;
+        this.receta=new Receta();
+        this.seguro=new Seguro();
+    } 
+}
