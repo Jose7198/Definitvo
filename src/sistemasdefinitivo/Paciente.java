@@ -10,7 +10,7 @@ package sistemasdefinitivo;
  * @author USER
  */
 public class Paciente extends Persona{
-     private String diagnostico;
+          private String diagnostico;
      private Medico medico;
      private Turno turno;
      private int  seguro;
@@ -20,8 +20,6 @@ public class Paciente extends Persona{
      private String alergias;
     private int estado;
 
-    
-
     public String getAlergias() {
         return alergias;
     }
@@ -30,9 +28,6 @@ public class Paciente extends Persona{
         this.alergias = alergias;
     }
      
-
-   
-
     public int getPiso() {
         return piso;
     }
@@ -41,14 +36,12 @@ public class Paciente extends Persona{
         this.piso = piso;
     }
 
-    
-
     @Override
     public String getNombre() {
         return nombre;
     }
 
-    public Paciente(String nombre, String diagnostico, Medico medico, String alergias, Turno turno, int piso,  int seguro,String receta, float cuenta) {
+    public Paciente(String nombre, String diagnostico, Medico medico, String alergias, Turno turno, int piso,  int seguro,Receta receta, float cuenta) {
     
         this.nombre = nombre;
         this.diagnostico = diagnostico;
@@ -60,12 +53,10 @@ public class Paciente extends Persona{
         this.receta=receta;
         this.cuenta = cuenta;
     }
+     @Override
     public String toString (){
         return "Nombre:"+nombre + "\n"+ "Diagnostico"+ diagnostico+"\n"+medico+"\n"+"Alergia:"+alergias+"\n"+"Turno"+turno+"\n"+"Piso:"+piso+"\n"+seguro+"\n"+"valor a pagar:"+cuenta+"Receta:"+receta;
     }
-
-    
-   
 
     @Override
     public void setNombre(String nombre) {
@@ -126,16 +117,13 @@ public class Paciente extends Persona{
                 estado1="Critico";
                 break;
         }
-        return estado;
+        return estado1;
     }
     
     public void setEstado(int estado){
         this.estado=estado;
     }
-    
-
-   
-
+       
     public float getCuenta() {
         return cuenta;
     }
@@ -144,9 +132,7 @@ public class Paciente extends Persona{
         this.cuenta = cuenta;
     }
 
-  
-
-    public Paciente(String Nombre, String diagnostico, Medico medico, Turno turno,int piso, int seguro, String receta, float cuenta) {
+    public Paciente(String Nombre, String diagnostico, Medico medico, Turno turno,int piso, int seguro, Receta receta, float cuenta) {
         super(Nombre);
        
         this.diagnostico = diagnostico;
@@ -158,10 +144,4 @@ public class Paciente extends Persona{
         this.piso=piso;
     }
 
-   
-    
-    
-    
-    
 }
-
