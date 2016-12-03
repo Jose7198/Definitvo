@@ -11,44 +11,54 @@ package sistemasdefinitivo;
  */
 public class Medico extends Persona {
     private String especialidad;
+    private Oficina oficina;
     private int estado;
-    public String toString (){
-        return "el nombre del medico es:"+nombre+"\n"+"la especialidad es:"+especialidad+"\n"+"el estado es:"+estado;
+    
+    public int getEstado(){
+        return this.estado;
     }
-
-    public Medico(String nombre, String especialidad, int estado) {
-        super(nombre);
-        this.especialidad = especialidad;
-        this.estado = estado;
-    }
-
-    public Medico(String especialidad, int estado) {
-        this.especialidad = especialidad;
-        this.estado = estado;
-    }
-
-    public int getEstado() {
-        return estado;
+    
+    public String getEstado(int a) {
+        String estado1="";
+        switch(this.estado){
+            case 0:
+                estado1="Desocupado";
+                break;
+            case 1:
+                estado1="Ocupado";
+                break;
+        }
+        return estado1;
     }
 
     public void setEstado(int estado) {
         this.estado = estado;
     }
-
+    
     public String getEspecialidad() {
         return especialidad;
     }
-    
-    public Medico(String Especialidad, String Nombre) {
-        super(Nombre);
-        this.especialidad = Especialidad;
-    }
-
-    public Medico(String especialidad) {
+ 
+    public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
 
+    public Oficina getOficina() {
+        return oficina;
+    }
 
-   
+    public void setOficina(Oficina oficina) {
+        this.oficina = oficina;
+    }
+    
+    public Medico(Oficina oficina){
+        this.especialidad="General";
+        this.oficina=oficina;
+        this.estado=0;
+    }
+    
+    public Medico(){
+        this.estado=0;
+    }   
     
 }
